@@ -1,0 +1,15 @@
+<configuration>
+    <!-- 定义配置 -->
+    <dataSource>
+        <!-- mysql5.7及之前的采用的驱动版本-->
+        <!--    <property name="driverClass" value="com.mysql.jdbc.driver"></property>  -->
+        <!-- mysql8.0以后的版本驱动发生变化  -->
+        <property name="driverClass" value="com.mysql.cj.jdbc.Driver"></property>
+        <property name="jdbcUrl" value="jdbc:mysql:///zdy_mybatis"></property>
+        <property name="name" value="root"></property>
+        <property name="password" value="root"></property>
+    </dataSource>
+
+    <!-- 映射**map.xml配置文件 -->
+    <mapper resource="userMapper.xml"></mapper>
+</configuration>

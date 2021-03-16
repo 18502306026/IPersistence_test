@@ -1,0 +1,21 @@
+<!-- namespace.id作为statementid定位唯一mapper -->
+<mapper namespace="com.lagou.dao.IUserDao">
+    <select id="findAll" resultType="com.lagou.pojo.User" parameterType="com.lagou.pojo.User">
+        select * from user
+    </select>
+    <select id="findByCondition" resultType="com.lagou.pojo.User" parameterType="com.lagou.pojo.User">
+        select * from user where id = #{id} and username=#{username}
+    </select>
+
+    <insert id="insertUser" resultType="java.lang.Integer" parameterType="com.lagou.pojo.User">
+        insert into user values(#{id},#{username},#{password},#{birthday})
+    </insert>
+
+    <update id="updateUserByCondition" resultType="java.lang.Integer" parameterType="com.lagou.pojo.User">
+        update user set username=#{username},password=#{password},birthday=#{birthday} where id=#{id}
+    </update>
+
+    <delete id="deleteUserByCondition" resultType="java.lang.Integer" parameterType="com.lagou.pojo.User">
+        delete from user where id=#{id}
+    </delete>
+</mapper>
